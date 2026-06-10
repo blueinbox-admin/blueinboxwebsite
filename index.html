@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Inbox — Get Your AI to Understand Your Business</title>
+<meta name="description" content="Most of what your company knows isn't written down. It's in meetings, old spreadsheets, and people's heads. I dig it out, clean it up, and help you pick the AI tools that put it to work.">
+<style>
+  :root {
+    --cream: #f5f1e8;
+    --cream-soft: #efe9dc;
+    --paper: #faf7f0;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a2d;
+    --muted: #6e6a55;
+    --faint: #a89878;
+    --green: #395a56;
+    --green-deep: #2f3a32;
+    --line: #ddd5c4;
+    --max: 1000px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--ink-soft);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245,241,232,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { font-size: 21px; font-weight: 400; letter-spacing: 0.02em; color: var(--ink); }
+  .brand span { color: var(--green); }
+  .nav-cta {
+    font-size: 15px; color: var(--muted); letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--faint); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-cta:hover { color: var(--green); border-color: var(--green); }
+
+  /* Hero */
+  .hero { padding: 130px 0 100px; text-align: center; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 36px;
+  }
+  h1 {
+    font-size: clamp(34px, 5.6vw, 58px); font-weight: 400; line-height: 1.14;
+    letter-spacing: -0.01em; color: var(--ink); margin-bottom: 32px;
+  }
+  h1 em { font-style: italic; color: var(--green); }
+  .sub { font-size: clamp(18px, 2.2vw, 22px); color: var(--muted); max-width: 620px; margin: 0 auto 44px; line-height: 1.6; }
+  .btn-row { display: flex; gap: 28px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .btn {
+    font-family: Georgia, serif; font-size: 17px; letter-spacing: 0.01em;
+    padding: 15px 34px; transition: all 0.25s; cursor: pointer; display: inline-block;
+  }
+  .btn-primary { background: var(--green); color: var(--paper); border: 1px solid var(--green); }
+  .btn-primary:hover { background: var(--green-deep); border-color: var(--green-deep); }
+  .btn-text { color: var(--muted); border-bottom: 1px solid var(--faint); padding-bottom: 2px; }
+  .btn-text:hover { color: var(--green); border-color: var(--green); }
+
+  /* Section base */
+  section { padding: 96px 0; }
+  .rule { border: none; border-top: 1px solid var(--line); }
+  .label {
+    font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 22px;
+  }
+  h2 { font-size: clamp(27px, 3.6vw, 38px); font-weight: 400; letter-spacing: -0.01em; color: var(--ink); line-height: 1.3; }
+
+  /* Big picture */
+  .bigpic { background: var(--cream-soft); }
+  .quote {
+    max-width: 780px; margin: 0 auto; text-align: center;
+    font-size: clamp(21px, 3vw, 29px); font-weight: 400; line-height: 1.5; color: var(--ink); font-style: italic;
+  }
+  .quote .pop { color: var(--green); font-style: normal; }
+
+  /* Examples */
+  .ex-head { max-width: 620px; margin-bottom: 60px; }
+  .ex-head h2 { margin-bottom: 18px; }
+  .ex-head p { color: var(--muted); font-size: 19px; }
+  .ex-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 52px 60px; }
+  .ex h3 { font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 12px; font-style: italic; }
+  .ex p { color: var(--muted); font-size: 17px; line-height: 1.65; }
+  .ex .tag { display:block; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
+
+  /* How */
+  .how-head { max-width: 600px; margin-bottom: 60px; }
+  .how-head h2 { margin-bottom: 18px; }
+  .how-head p { color: var(--muted); font-size: 19px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .step-n { font-size: 15px; letter-spacing: 0.1em; color: var(--green); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .step h3 { font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 12px; }
+  .step p { color: var(--muted); font-size: 17px; line-height: 1.65; }
+
+  /* Principles */
+  .principles { background: var(--cream-soft); }
+  .prin-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; margin-top: 52px; }
+  .prin h4 { font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 10px; font-style: italic; }
+  .prin p { color: var(--muted); font-size: 17px; line-height: 1.65; }
+
+  /* CTA */
+  .cta { text-align: center; }
+  .cta h2 { max-width: 660px; margin: 0 auto 22px; }
+  .cta p { color: var(--muted); font-size: 19px; max-width: 560px; margin: 0 auto 40px; }
+
+  /* Footer */
+  footer { background: var(--green-deep); color: #cdd4cc; padding: 64px 0 52px; }
+  .foot { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 28px; }
+  .foot-brand { font-size: 21px; color: var(--paper); margin-bottom: 8px; }
+  .foot-brand + p { font-size: 15px; color: #9aa89c; max-width: 300px; line-height: 1.6; }
+  .foot-links { display: flex; flex-direction: column; gap: 14px; text-align: right; }
+  .foot-links a { color: #cdd4cc; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; justify-content: flex-end; transition: color 0.2s; }
+  .foot-links a:hover { color: var(--paper); }
+  .foot-links svg { width: 17px; height: 17px; fill: currentColor; }
+  .copyright { color: #7e8c80; font-size: 13px; margin-top: 48px; letter-spacing: 0.04em; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 26px; }
+
+  @media (max-width: 760px) {
+    .steps, .prin-grid, .ex-grid { grid-template-columns: 1fr; gap: 44px; }
+    .hero { padding: 96px 0 72px; }
+    section { padding: 72px 0; }
+    .foot { flex-direction: column; }
+    .foot-links { text-align: left; align-items: flex-start; }
+    .foot-links a { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Blue<span>Inbox</span></div>
+    <a href="mailto:david@blueinboxllc.com" class="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI Data Consulting</p>
+    <h1>Get your AI to actually<br><em>understand your business</em></h1>
+    <p class="sub">Most of what your company knows isn't written down. It's in meetings. In old spreadsheets. In people's heads. I dig it out, clean it up, and help you pick the AI tools that put it to work.</p>
+    <div class="btn-row">
+      <a href="mailto:david@blueinboxllc.com" class="btn btn-primary">Start a conversation</a>
+      <a href="#examples" class="btn btn-text">See what this looks like</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- BIG PICTURE -->
+<section class="bigpic">
+  <div class="wrap">
+    <p class="quote">
+      Here's the thing. Most of what your company knows was never written down. It's stuck in conversations, in spreadsheets nobody updates, in the way your team just <em>knows</em> how stuff works. <span class="pop">AI can't use what it can't see. So first, someone has to find it and get it in order.</span>
+    </p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- EXAMPLES -->
+<section id="examples">
+  <div class="wrap">
+    <div class="ex-head">
+      <p class="label">What this looks like</p>
+      <h2>Take what your company already knows. Make it something your AI can use.</h2>
+    </div>
+    <div class="ex-grid">
+      <div class="ex">
+        <span class="tag">Meetings</span>
+        <h3>Save every meeting</h3>
+        <p>Record your Zoom and Teams calls. Transcribe them. Sort them. Now your AI knows what got decided, why, and how your team talks. Nobody has to repeat what was already said.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">Tribal knowledge</span>
+        <h3>Get it out of people's heads</h3>
+        <p>Your team knows how things work. That knowledge lives in their heads. We write it down once. Now your AI and your next hire can follow it instead of guessing.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">Scattered data</span>
+        <h3>Ten apps, one answer</h3>
+        <p>Your customers, orders, and files live in a dozen tools. We pull them together. You ask one question. You get one straight answer. Not ten half answers.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">Tool choice</span>
+        <h3>Pick the right tools</h3>
+        <p>Some AI tools are worth paying for. Most aren't, at least not for you. I help you figure out which ones fit and which to skip. No sales pitch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- HOW -->
+<section>
+  <div class="wrap">
+    <div class="how-head">
+      <p class="label">How I work</p>
+      <h2>I'm not here to sell you a platform.</h2>
+      <p>I figure out what your AI needs to see. I get your info in shape. Then I help you pick the tools that fit.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">I.</div>
+        <h3>Find what's there</h3>
+        <p>I find where your knowledge actually lives. Meetings. Systems. Spreadsheets. People. Then I spot what's missing or a mess.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">II.</div>
+        <h3>Get it into shape</h3>
+        <p>I pull it out, clean it up, and organize it so an AI can read it and trust it. We focus on what you need. No endless cleanup.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">III.</div>
+        <h3>Pick the tools</h3>
+        <p>I pick tools that fit, connect them, and set it up so anyone on your team can ask a question and get a real answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="wrap">
+    <p class="label">What to expect</p>
+    <h2 style="max-width:620px;">You can trust my advice. I'm not tied to a product.</h2>
+    <div class="prin-grid">
+      <div class="prin">
+        <h4>No product to push</h4>
+        <p>I point you to the best tool for the job, even if I didn't build it. And I'll tell you when you don't need one.</p>
+      </div>
+      <div class="prin">
+        <h4>One clear picture</h4>
+        <p>Right now your tools all guess on their own. I get them working from the same picture of your business.</p>
+      </div>
+      <div class="prin">
+        <h4>Small and practical</h4>
+        <p>We start with the questions you care about. Not a perfect cleanup of everything. It stays small and stays useful.</p>
+      </div>
+      <div class="prin">
+        <h4>Something you can use</h4>
+        <p>You don't get a report and a slide deck. You get your knowledge in order and tools that work on top of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <p class="label">Get in touch</p>
+    <h2>Is what your company knows stuck in meetings, files, and people's heads? That's what I fix.</h2>
+    <p>Let's have a short talk. No pitch. Just where your info lives now and what you wish you could ask.</p>
+    <a href="mailto:david@blueinboxllc.com" class="btn btn-primary">Email david@blueinboxllc.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-brand">Blue Inbox LLC</div>
+        <p>I get your information in shape so your AI tools actually work.</p>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:david@blueinboxllc.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+          david@blueinboxllc.com
+        </a>
+        <a href="https://www.linkedin.com/in/david-zernik-los-angeles/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17v-7H6v7h2.34zM7.17 8.9a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17v-3.84c0-2.05-1.1-3-2.56-3-1.18 0-1.7.65-2 1.1V10H11.1c.03.66 0 7 0 7h2.34v-3.9c0-.21.02-.42.08-.57.16-.42.55-.86 1.2-.86.84 0 1.18.64 1.18 1.58V17H18z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Blue Inbox LLC</div>
+  </div>
+</footer>
+
+</body>
+</html>
