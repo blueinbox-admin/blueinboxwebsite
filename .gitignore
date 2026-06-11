@@ -1,0 +1,6 @@
+# Local-only demo video (hosted on Vimeo, not served from the repo)
+james-setup.mp4
+*.mp4
+
+# macOS
+.DS_Store

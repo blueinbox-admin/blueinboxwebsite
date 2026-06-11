@@ -96,6 +96,30 @@
   .ex p { color: var(--muted); font-size: 17px; line-height: 1.65; }
   .ex .tag { display:block; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
 
+  /* Free setup / demo video */
+  .demo { background: var(--cream-soft); }
+  .demo-head { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+  .demo-head h2 { margin-bottom: 18px; }
+  .demo-head p { color: var(--muted); font-size: 19px; }
+  .video-wrap { max-width: 840px; margin: 0 auto; }
+  .video-box {
+    position: relative; width: 100%; aspect-ratio: 16 / 9;
+    background: var(--green-deep); border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden; display: grid; place-items: center;
+  }
+  .video-box .play {
+    width: 78px; height: 78px; border-radius: 50%;
+    background: rgba(245,241,232,0.95); display: grid; place-items: center;
+  }
+  .video-box .play::after {
+    content: ""; border-style: solid; border-width: 13px 0 13px 21px;
+    border-color: transparent transparent transparent var(--green-deep); margin-left: 6px;
+  }
+  .video-box .vlabel { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: #9aa89c; font-size: 14px; letter-spacing: 0.04em; }
+  .video-box video, .video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-embed { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--green-deep); }
+  .demo-cta { text-align: center; margin-top: 40px; }
+
   /* How */
   .how-head { max-width: 600px; margin-bottom: 60px; }
   .how-head h2 { margin-bottom: 18px; }
@@ -151,7 +175,7 @@
   <div class="wrap">
     <p class="eyebrow">AI Data Consulting</p>
     <h1>Get your AI to actually<br><em>understand your business</em></h1>
-    <p class="sub">Most of what your company knows isn't written down. It's in meetings. In old spreadsheets. In people's heads. I dig it out, clean it up, and help you pick the AI tools that put it to work.</p>
+    <p class="sub">Most of what your company knows isn't written down. It's in meetings, in old spreadsheets, in people's heads. I help you set up the simple things, use the tools you already pay for, and make them work together. Not buy more AI.</p>
     <div class="btn-row">
       <a href="mailto:david@blueinboxllc.com" class="btn btn-primary">Start a conversation</a>
       <a href="#examples" class="btn btn-text">See what this looks like</a>
@@ -198,8 +222,30 @@
       <div class="ex">
         <span class="tag">Tool choice</span>
         <h3>Pick the right tools</h3>
-        <p>Some AI tools are worth paying for. Most aren't, at least not for you. I help you figure out which ones fit and which to skip. No sales pitch.</p>
+        <p>Some AI tools are worth paying for. Most aren't, at least not for you. I help you figure out which ones fit, which to skip, and how to use them together. No sales pitch.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FREE SETUP / DEMO -->
+<section class="demo">
+  <div class="wrap">
+    <div class="demo-head">
+      <p class="label">Free setup</p>
+      <h2>I'll connect your first tool. Free.</h2>
+      <p>In about twenty minutes I'll hook one of your tools up to AI, live. You tell it to make a change, and you watch it happen. No charge, no pitch. See it work, then decide.</p>
+    </div>
+    <div class="video-wrap">
+      <div class="video-embed">
+        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1200606139?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="james-setup"></iframe></div>
+      </div>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <div class="demo-cta">
+      <a href="mailto:david@blueinboxllc.com?subject=Free%20setup" class="btn btn-primary">Book a free setup</a>
     </div>
   </div>
 </section>
@@ -211,8 +257,8 @@
   <div class="wrap">
     <div class="how-head">
       <p class="label">How I work</p>
-      <h2>I'm not here to sell you a platform.</h2>
-      <p>I figure out what your AI needs to see. I get your info in shape. Then I help you pick the tools that fit.</p>
+      <h2>I'm not here to sell you more AI.</h2>
+      <p>You probably have the tools already. I figure out what works best for your business, set up the simple things, and get those tools working together.</p>
     </div>
     <div class="steps">
       <div class="step">
@@ -227,8 +273,8 @@
       </div>
       <div class="step">
         <div class="step-n">III.</div>
-        <h3>Pick the tools</h3>
-        <p>I pick tools that fit, connect them, and set it up so anyone on your team can ask a question and get a real answer.</p>
+        <h3>Make them work together</h3>
+        <p>I figure out which tools fit, connect the ones you already have, and set it up so anyone on your team can ask a question and get a real answer.</p>
       </div>
     </div>
   </div>
@@ -243,12 +289,12 @@
     <h2 style="max-width:620px;">You can trust my advice. I'm not tied to a product.</h2>
     <div class="prin-grid">
       <div class="prin">
-        <h4>No product to push</h4>
-        <p>I point you to the best tool for the job, even if I didn't build it. And I'll tell you when you don't need one.</p>
+        <h4>Use what you already have</h4>
+        <p>I'm not selling you more AI. I help you get more out of the tools you already pay for, and I'll tell you when you don't need a new one.</p>
       </div>
       <div class="prin">
-        <h4>One clear picture</h4>
-        <p>Right now your tools all guess on their own. I get them working from the same picture of your business.</p>
+        <h4>Tools that talk to each other</h4>
+        <p>Right now your tools all work on their own. I get them talking to each other, working from the same picture of your business.</p>
       </div>
       <div class="prin">
         <h4>Small and practical</h4>
