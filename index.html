@@ -61,6 +61,11 @@
   h1 em { font-style: italic; color: var(--green); }
   .sub { font-size: clamp(18px, 2.2vw, 22px); color: var(--muted); max-width: 620px; margin: 0 auto 44px; line-height: 1.6; }
   .btn-row { display: flex; gap: 28px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .sub a.lnk { color: var(--green); text-decoration: none; font-weight: 600; }
+  .sub a.lnk:hover { text-decoration: underline; }
+  .hero-note { max-width: 520px; margin: 24px auto 0; font-size: 14px; line-height: 1.55; color: var(--faint); }
+  .hero-note b { color: var(--muted); font-weight: 600; }
+  .ast { color: var(--green); text-decoration: none; font-weight: 600; vertical-align: super; font-size: 0.7em; padding-left: 1px; }
   .btn {
     font-family: Georgia, serif; font-size: 17px; letter-spacing: 0.01em;
     padding: 15px 34px; transition: all 0.25s; cursor: pointer; display: inline-block;
@@ -78,14 +83,6 @@
     color: var(--faint); margin-bottom: 22px;
   }
   h2 { font-size: clamp(27px, 3.6vw, 38px); font-weight: 400; letter-spacing: -0.01em; color: var(--ink); line-height: 1.3; }
-
-  /* Big picture */
-  .bigpic { background: var(--cream-soft); }
-  .quote {
-    max-width: 780px; margin: 0 auto; text-align: center;
-    font-size: clamp(21px, 3vw, 29px); font-weight: 400; line-height: 1.5; color: var(--ink); font-style: italic;
-  }
-  .quote .pop { color: var(--green); font-style: normal; }
 
   /* Examples */
   .ex-head { max-width: 620px; margin-bottom: 60px; }
@@ -120,30 +117,14 @@
   .video-embed { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--green-deep); }
   .demo-cta { text-align: center; margin-top: 40px; }
 
-  /* Who this is for */
-  .whofor { background: var(--cream-soft); text-align: center; }
-  .whofor h2 { max-width: 680px; margin: 0 auto 20px; }
-  .whofor p { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: 19px; }
-
-  /* How */
-  .how-head { max-width: 600px; margin-bottom: 60px; }
-  .how-head h2 { margin-bottom: 18px; }
-  .how-head p { color: var(--muted); font-size: 19px; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-  .step-n { font-size: 15px; letter-spacing: 0.1em; color: var(--green); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-  .step h3 { font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 12px; }
-  .step p { color: var(--muted); font-size: 17px; line-height: 1.65; }
-
   /* Principles */
   .principles { background: var(--cream-soft); }
-  .prin-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; margin-top: 52px; }
-  .prin h4 { font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 10px; font-style: italic; }
-  .prin p { color: var(--muted); font-size: 17px; line-height: 1.65; }
+  .prin-prose { max-width: 640px; margin-top: 16px; }
+  .prin-prose p { color: var(--muted); font-size: 19px; line-height: 1.65; }
+  .prin-prose p + p { margin-top: 22px; }
+  .prin-prose a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .prin-prose a:hover { text-decoration: underline; }
 
-  /* CTA */
-  .cta { text-align: center; }
-  .cta h2 { max-width: 660px; margin: 0 auto 22px; }
-  .cta p { color: var(--muted); font-size: 19px; max-width: 560px; margin: 0 auto 40px; }
 
   /* Footer */
   footer { background: var(--green-deep); color: #cdd4cc; padding: 64px 0 52px; }
@@ -157,7 +138,7 @@
   .copyright { color: #7e8c80; font-size: 13px; margin-top: 48px; letter-spacing: 0.04em; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 26px; }
 
   @media (max-width: 760px) {
-    .steps, .prin-grid, .ex-grid { grid-template-columns: 1fr; gap: 44px; }
+    .prin-grid, .ex-grid { grid-template-columns: 1fr; gap: 44px; }
     .hero { padding: 96px 0 72px; }
     section { padding: 72px 0; }
     .foot { flex-direction: column; }
@@ -179,23 +160,13 @@
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">Free Claude setup for local service businesses</p>
-    <h1>Ask your business anything.<br>Get a <em>real answer</em>.</h1>
-    <p class="sub">In a free thirty-minute setup, I connect one of the tools you already pay for to Claude. Then you just ask, in plain words, and get a straight answer. No new software to learn, no tech team needed, no charge to start.</p>
+    <h1>Ask your tools anything.<br>Get a <em>real answer</em>.</h1>
+    <p class="sub">Hi, I'm David, an engineer with 10 years of experience (<a href="https://www.linkedin.com/in/david-zernik-los-angeles/" target="_blank" rel="noopener" class="lnk">LinkedIn</a>). I help local businesses actually use the tools they already pay for. I connect them to Claude, so you can ask a plain question and get a straight answer back. No new software, no reports, no tech team. The first thirty-minute setup is free.<a href="#why-free" class="ast">*</a></p>
     <div class="btn-row">
       <a href="https://calendly.com/blueinbox/30min" target="_blank" rel="noopener" class="btn btn-primary">Book your free setup</a>
       <a href="#examples" class="btn btn-text">See what this looks like</a>
     </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- BIG PICTURE -->
-<section class="bigpic">
-  <div class="wrap">
-    <p class="quote">
-      Here's the thing. Most of what your company knows was never written down. It's stuck in conversations, in spreadsheets nobody updates, in the way your team just <em>knows</em> how stuff works. <span class="pop">AI can't use what it can't see. So first, someone has to find it and get it in order.</span>
-    </p>
+    <p class="hero-note" id="why-free"><b>* Why free?</b> It's how I grow. If the setup helps, all I ask is one line I can quote (anonymous is fine), and that you keep me in mind for anyone who needs deeper AI work.</p>
   </div>
 </section>
 
@@ -210,12 +181,12 @@
     </div>
     <div class="ex-grid">
       <div class="ex">
-        <span class="tag">WordPress</span>
+        <span class="tag">WordPress, Squarespace, Wix</span>
         <h3>Change your site by just asking</h3>
-        <p>Make my homepage background green. Add a page for the new service. Swap the hero photo. You say it in plain words and it happens on your WordPress site. No developer, no waiting a week for a small fix.</p>
+        <p>Make my homepage background green. Add a page for the new service. Swap the hero photo. You say it in plain words and it happens on your site, whatever you built it on. No developer, no waiting a week for a small fix.</p>
       </div>
       <div class="ex">
-        <span class="tag">QuickBooks</span>
+        <span class="tag">QuickBooks, Xero, FreshBooks</span>
         <h3>Talk to your books</h3>
         <p>Ask who still owes you money, what you made last month, or how this quarter stacks up. Plain English, real numbers, no reports to build.</p>
       </div>
@@ -235,50 +206,39 @@
         <p>Record your calls, transcribe them, sort them. Now Claude knows what got decided, why, and how your team talks. Nobody has to repeat what was already said.</p>
       </div>
       <div class="ex">
-        <span class="tag">Mailchimp</span>
+        <span class="tag">Mailchimp, Constant Contact, Klaviyo</span>
         <h3>Sound like you, not a robot</h3>
-        <p>Turn this month's work into a Mailchimp newsletter in your own voice. It knows how your business talks, so nothing goes out generic or off-brand.</p>
+        <p>Turn this month's work into a newsletter in your own voice, in Mailchimp, Constant Contact, whatever you send from. It knows how your business talks, so nothing goes out generic or off-brand.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- WHO THIS IS FOR -->
-<section class="whofor">
-  <div class="wrap">
-    <p class="label">Who this is for</p>
-    <h2>For local service businesses without a tech team.</h2>
-    <p>Law offices, clinics and dental practices, contractors, salons, agencies, real estate teams. If you run a local business, pay for a handful of tools you barely use, and feel like everyone's talking about AI while nobody's shown you what to actually do with it, this is for you. You don't need to be technical. That's the whole point. I handle that part.</p>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- HOW -->
-<section>
-  <div class="wrap">
-    <div class="how-head">
-      <p class="label">How it works</p>
-      <h2>It's a service, not another tool you have to run.</h2>
-      <p>You don't set anything up, connect anything, or keep anything running. I do all of that. You just ask.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-n">I.</div>
-        <h3>We start small</h3>
-        <p>A free thirty-minute setup. We connect one of your tools so you can see it work for yourself. No charge, no commitment.</p>
+      <div class="ex">
+        <span class="tag">Jobber, Housecall Pro, ServiceTitan</span>
+        <h3>Run your jobs without the busywork</h3>
+        <p>Where does the Miller job stand? Who hasn't paid yet? Send that quote out. Ask your job software in plain words instead of digging through a dashboard.</p>
       </div>
-      <div class="step">
-        <div class="step-n">II.</div>
-        <h3>I get things in shape</h3>
-        <p>I organize what your business already knows and connect the tools you pay for, so the answers come out right.</p>
+      <div class="ex">
+        <span class="tag">Clio, MyCase</span>
+        <h3>Stay on top of your matters</h3>
+        <p>Which cases are waiting on me? What's due this week? Who still owes a retainer? Your practice software, answered in plain English.</p>
       </div>
-      <div class="step">
-        <div class="step-n">III.</div>
-        <h3>I keep it running</h3>
-        <p>As your business changes, I keep it tuned and add to it over time. You never have to touch the technical side.</p>
+      <div class="ex">
+        <span class="tag">Mindbody, Boulevard, Vagaro</span>
+        <h3>Keep your chairs full</h3>
+        <p>See tomorrow's bookings, spot the open slots, find the regulars you haven't seen in a while. The booking software you already run, made askable.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">Twilio, OpenPhone, RingCentral</span>
+        <h3>Text customers back, fast</h3>
+        <p>Send the reminder, follow up on a quote, answer the question you get ten times a day. Just say what to send and it goes.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">Toast, Clover, Lightspeed</span>
+        <h3>Know your numbers at the register</h3>
+        <p>What sold best last week? How did Saturday stack up against last month? Ask your POS straight, no end-of-day report to run.</p>
+      </div>
+      <div class="ex">
+        <span class="tag">AppFolio, Buildium, Follow Up Boss</span>
+        <h3>Stay ahead of your properties and leads</h3>
+        <p>Who's late on rent? Which units are sitting open? Which leads went cold? Your property and CRM tools, in plain words.</p>
       </div>
     </div>
   </div>
@@ -287,7 +247,7 @@
 <hr class="rule">
 
 <!-- DEMO VIDEO -->
-<section class="demo">
+<section class="demo" id="see-it">
   <div class="wrap">
     <div class="demo-head">
       <p class="label">See it in action</p>
@@ -311,40 +271,14 @@
 <!-- PRINCIPLES -->
 <section class="principles">
   <div class="wrap">
-    <p class="label">What to expect</p>
-    <h2 style="max-width:620px;">You can trust my advice. I'm not tied to a product.</h2>
-    <div class="prin-grid">
-      <div class="prin">
-        <h4>Use what you already have</h4>
-        <p>I'm not selling you more AI. I help you get more out of the tools you already pay for, and I'll tell you when you don't need a new one.</p>
-      </div>
-      <div class="prin">
-        <h4>I handle the scary parts</h4>
-        <p>Logins, security, the technical setup. That's all on me. You don't have to understand any of it, and your data stays yours.</p>
-      </div>
-      <div class="prin">
-        <h4>Small and practical</h4>
-        <p>We start with the questions you care about. Not a perfect cleanup of everything. It stays small and stays useful.</p>
-      </div>
-      <div class="prin">
-        <h4>Something you can use</h4>
-        <p>You don't get a report and a slide deck. You get your knowledge in order, plus a simple tool, included free, that remembers how your business works and keeps getting better over time.</p>
-      </div>
+    <p class="label">Memory tool</p>
+    <div class="prin-prose">
+      <p>You also get to try my memory tool, included free. It holds the things only you know about your business, the judgment calls and the context, so Claude stops guessing and gets sharper the more you use it. <a href="/memory-app-mockup.html" target="_blank" rel="noopener">Take a look at the prototype.</a></p>
     </div>
   </div>
 </section>
 
 <hr class="rule">
-
-<!-- CTA -->
-<section class="cta">
-  <div class="wrap">
-    <p class="label">Get in touch</p>
-    <h2>Your tools don't talk to each other, and half of what your company knows is stuck in people's heads. I fix both.</h2>
-    <p>Let's have a short talk. No pitch. Just where your info lives now and what you wish you could ask.</p>
-    <a href="mailto:david@blueinboxllc.com" class="btn btn-primary">Email david@blueinboxllc.com</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
