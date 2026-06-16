@@ -92,6 +92,10 @@
   .ex h3 { font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 12px; font-style: italic; }
   .ex p { color: var(--muted); font-size: 17px; line-height: 1.65; }
   .ex .tag { display:block; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
+  .ex .asks { list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
+  .ex .asks li { position: relative; padding-left: 20px; margin-bottom: 9px; font-style: italic; color: var(--green); font-size: 15.5px; line-height: 1.5; }
+  .ex .asks li:last-child { margin-bottom: 0; }
+  .ex .asks li::before { content: "\203A"; position: absolute; left: 2px; font-style: normal; color: var(--faint); }
 
   /* Free setup / demo video */
   .demo { background: var(--cream-soft); }
@@ -159,14 +163,15 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Free Claude setup for local service businesses</p>
-    <h1>Ask your tools anything.<br>Get a <em>real answer</em>.</h1>
-    <p class="sub">Hi, I'm David, an engineer with 10 years of experience (<a href="https://www.linkedin.com/in/david-zernik-los-angeles/" target="_blank" rel="noopener" class="lnk">LinkedIn</a>). I help local businesses actually use the tools they already pay for. I connect them to Claude, so you can ask a plain question and get a straight answer back. No new software, no reports, no tech team. The first thirty-minute setup is free.<a href="#why-free" class="ast">*</a></p>
+    <p class="eyebrow">Custom Claude and Claude Code setups</p>
+    <h1>Run your business<br>with <em>Claude Code</em>.</h1>
+    <p class="sub" style="margin-bottom: 20px;">Hi, I'm David, a developer in Los Angeles, CA. For 10 years I've built for top brands like Toyota, the NFL, HBO Max, AT&amp;T, and American Express.</p>
+    <p class="sub" style="margin-bottom: 20px;">Claude has one-click connectors for the easy tools. The real work that runs your business takes Claude Code, and that's what I set up for you. The stuff you'd hire a WordPress developer or a bookkeeper for, you just ask for instead.</p>
+    <p class="sub">For most people, one free thirty-minute setup is all they ever need. A few want more complex AI apps, and that's the work I'd charge for.</p>
     <div class="btn-row">
       <a href="https://calendly.com/blueinbox/30min" target="_blank" rel="noopener" class="btn btn-primary">Book your free setup</a>
       <a href="#examples" class="btn btn-text">See what this looks like</a>
     </div>
-    <p class="hero-note" id="why-free"><b>* Why free?</b> It's how I grow. If the setup helps, all I ask is one line I can quote (anonymous is fine), and that you keep me in mind for anyone who needs deeper AI work.</p>
   </div>
 </section>
 
@@ -183,62 +188,82 @@
       <div class="ex">
         <span class="tag">WordPress, Squarespace, Wix</span>
         <h3>Change your site by just asking</h3>
-        <p>Make my homepage background green. Add a page for the new service. Swap the hero photo. You say it in plain words and it happens on your site, whatever you built it on. No developer, no waiting a week for a small fix.</p>
+        <p>Say it in plain words and it happens on your site, whatever you built it on. No developer, no waiting a week for a small fix.</p>
+        <ul class="asks">
+          <li>Make my homepage background green.</li>
+          <li>Add a page for the new service and put it in the menu.</li>
+          <li>Swap the hero photo for the one in this folder.</li>
+        </ul>
       </div>
       <div class="ex">
         <span class="tag">QuickBooks, Xero, FreshBooks</span>
         <h3>Talk to your books</h3>
-        <p>Ask who still owes you money, what you made last month, or how this quarter stacks up. Plain English, real numbers, no reports to build.</p>
-      </div>
-      <div class="ex">
-        <span class="tag">Stripe &amp; Square</span>
-        <h3>Stay on top of payments</h3>
-        <p>See who paid and who bounced. Refund the Henderson charge. Match this week's deposits to the right clients. The money side, handled by asking.</p>
-      </div>
-      <div class="ex">
-        <span class="tag">Acuity &amp; Calendly</span>
-        <h3>Turn bookings into clients</h3>
-        <p>When someone books a consult, Claude adds them to your books and your client list, and flags the ones worth a call. No copying details between apps.</p>
-      </div>
-      <div class="ex">
-        <span class="tag">Zoom &amp; Teams</span>
-        <h3>Save every meeting</h3>
-        <p>Record your calls, transcribe them, sort them. Now Claude knows what got decided, why, and how your team talks. Nobody has to repeat what was already said.</p>
+        <p>Plain English, real numbers, no reports to build.</p>
+        <ul class="asks">
+          <li>Who still owes me money, and how overdue are they?</li>
+          <li>What did I make last month versus the month before?</li>
+          <li>How does this quarter stack up against last year?</li>
+        </ul>
       </div>
       <div class="ex">
         <span class="tag">Mailchimp, Constant Contact, Klaviyo</span>
         <h3>Sound like you, not a robot</h3>
-        <p>Turn this month's work into a newsletter in your own voice, in Mailchimp, Constant Contact, whatever you send from. It knows how your business talks, so nothing goes out generic or off-brand.</p>
+        <p>Newsletters in your own voice. It knows how your business talks, so nothing goes out generic or off-brand.</p>
+        <ul class="asks">
+          <li>Turn this month's projects into a newsletter in my voice.</li>
+          <li>Who hasn't opened my last three emails?</li>
+          <li>Schedule this to go out Tuesday at 9am.</li>
+        </ul>
       </div>
       <div class="ex">
         <span class="tag">Jobber, Housecall Pro, ServiceTitan</span>
         <h3>Run your jobs without the busywork</h3>
-        <p>Where does the Miller job stand? Who hasn't paid yet? Send that quote out. Ask your job software in plain words instead of digging through a dashboard.</p>
+        <p>Ask your job software in plain words instead of digging through a dashboard.</p>
+        <ul class="asks">
+          <li>Where does the Miller job stand?</li>
+          <li>Who hasn't paid yet, and for how long?</li>
+          <li>Send the quote for the Davis deck.</li>
+        </ul>
       </div>
       <div class="ex">
-        <span class="tag">Clio, MyCase</span>
-        <h3>Stay on top of your matters</h3>
-        <p>Which cases are waiting on me? What's due this week? Who still owes a retainer? Your practice software, answered in plain English.</p>
-      </div>
-      <div class="ex">
-        <span class="tag">Mindbody, Boulevard, Vagaro</span>
-        <h3>Keep your chairs full</h3>
-        <p>See tomorrow's bookings, spot the open slots, find the regulars you haven't seen in a while. The booking software you already run, made askable.</p>
-      </div>
-      <div class="ex">
-        <span class="tag">Twilio, OpenPhone, RingCentral</span>
-        <h3>Text customers back, fast</h3>
-        <p>Send the reminder, follow up on a quote, answer the question you get ten times a day. Just say what to send and it goes.</p>
+        <span class="tag">Shopify, WooCommerce, BigCommerce</span>
+        <h3>Run your store from a sentence</h3>
+        <p>Your store, run by asking instead of clicking through admin.</p>
+        <ul class="asks">
+          <li>Mark order #1043 shipped.</li>
+          <li>Bump the price on the summer line by 10%.</li>
+          <li>Find everyone who bought the blue one and never came back.</li>
+        </ul>
       </div>
       <div class="ex">
         <span class="tag">Toast, Clover, Lightspeed</span>
         <h3>Know your numbers at the register</h3>
-        <p>What sold best last week? How did Saturday stack up against last month? Ask your POS straight, no end-of-day report to run.</p>
+        <p>Ask your POS straight, no end-of-day report to run.</p>
+        <ul class="asks">
+          <li>What sold best last week?</li>
+          <li>How did Saturday compare to last month?</li>
+          <li>Which menu items are barely making money?</li>
+        </ul>
       </div>
       <div class="ex">
-        <span class="tag">AppFolio, Buildium, Follow Up Boss</span>
-        <h3>Stay ahead of your properties and leads</h3>
-        <p>Who's late on rent? Which units are sitting open? Which leads went cold? Your property and CRM tools, in plain words.</p>
+        <span class="tag">Clio, MyCase</span>
+        <h3>Stay on top of your matters</h3>
+        <p>Your practice software, answered in plain English.</p>
+        <ul class="asks">
+          <li>Which cases are waiting on me?</li>
+          <li>What's due this week?</li>
+          <li>Who still owes a retainer?</li>
+        </ul>
+      </div>
+      <div class="ex">
+        <span class="tag">Mindbody, Boulevard, Vagaro</span>
+        <h3>Keep your chairs full</h3>
+        <p>The booking software you already run, made askable.</p>
+        <ul class="asks">
+          <li>What's on the books for tomorrow?</li>
+          <li>Where are the open slots this week?</li>
+          <li>Which regulars haven't booked in a month?</li>
+        </ul>
       </div>
     </div>
   </div>

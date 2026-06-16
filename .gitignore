@@ -2,11 +2,6 @@
 james-setup.mp4
 *.mp4
 
-# Active Memory prototypes: kept here for editing only, deployed to the ideas
-# repo (blueinbox-admin/ideas), NOT to blueinboxllc.com. See CLAUDE.md.
-memory-app-mockup.html
-memory-app-mockup2.html
-
 # macOS
 .DS_Store
 .gstack/
