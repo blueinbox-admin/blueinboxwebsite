@@ -120,6 +120,29 @@
   .video-box video, .video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video-embed { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--green-deep); }
   .demo-cta { text-align: center; margin-top: 40px; }
+  /* gated video */
+  .video-gate { position: relative; padding-top: 56.25%; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--green-deep) center/cover no-repeat; cursor: pointer; }
+  .video-gate img.poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .video-gate-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 24px; background: rgba(26,26,26,0.42); transition: background 0.2s; }
+  .video-gate:hover .video-gate-inner { background: rgba(26,26,26,0.3); }
+  .video-gate .play { width: 66px; height: 66px; border-radius: 50%; border: 1px solid rgba(245,241,232,0.45); display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s; }
+  .video-gate:hover .play { background: rgba(245,241,232,0.12); border-color: var(--cream); }
+  .video-gate .play svg { width: 22px; height: 22px; margin-left: 4px; fill: var(--cream); }
+  .video-gate .gate-eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
+  .video-gate .gate-title { font-size: 20px; color: var(--cream); font-style: italic; }
+  .gate-overlay { position: fixed; inset: 0; background: rgba(26,26,26,0.55); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 200; }
+  .gate-overlay.open { display: flex; }
+  .gate-card { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; max-width: 430px; width: 100%; padding: 40px 36px; text-align: center; }
+  .gate-card h3 { font-size: 23px; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: 14px; }
+  .gate-card p { color: var(--muted); font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+  .gate-form { display: flex; gap: 10px; margin-bottom: 14px; }
+  .gate-input { flex: 1; font-family: inherit; font-size: 16px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--cream); color: var(--ink); }
+  .gate-input:focus { outline: none; border-color: var(--green); }
+  .gate-submit { padding: 11px 20px; white-space: nowrap; }
+  .gate-error { color: #9a3b2f; font-size: 14px; margin-bottom: 14px; }
+  .gate-card .gate-email { display: inline-block; font-size: 17px; color: var(--green); border-bottom: 1px solid var(--green); padding-bottom: 2px; }
+  .gate-card .gate-close { position: absolute; top: 14px; right: 18px; font-size: 22px; line-height: 1; color: var(--faint); background: none; border: none; cursor: pointer; }
+  .gate-card .gate-close:hover { color: var(--ink); }
 
   /* Principles */
   .principles { background: var(--cream-soft); }
@@ -280,11 +303,15 @@
       <p>Thirty minutes, one tool connected, real questions answered. This is what your free session looks like.</p>
     </div>
     <div class="video-wrap">
-      <div class="video-embed">
-        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1200606139?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="james-setup"></iframe></div>
+      <div class="video-gate" id="videoGate" role="button" tabindex="0" aria-label="Request access to the setup video">
+        <img class="poster" src="setup-poster.jpg" alt="Setup session preview" loading="lazy">
+        <div class="video-gate-inner">
+          <p class="gate-eyebrow">By request</p>
+          <div class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+          <p class="gate-title">Watch the full setup</p>
+        </div>
       </div>
     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
     <div class="demo-cta">
       <a href="https://calendly.com/blueinbox/30min" target="_blank" rel="noopener" class="btn btn-primary">Set up a time</a>
     </div>
@@ -327,6 +354,53 @@
     <div class="copyright">© 2026 Blue Inbox LLC</div>
   </div>
 </footer>
+
+<!-- VIDEO ACCESS MODAL -->
+<div class="gate-overlay" id="gateOverlay" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <button class="gate-close" id="gateClose" aria-label="Close">&times;</button>
+    <h3 id="gateTitle">The setup video is by request.</h3>
+    <p>Got a password? Enter it below. Don't have one? Email me and I'll send it over.</p>
+    <form id="gateForm" class="gate-form">
+      <input type="password" id="gatePassword" class="gate-input" placeholder="Password" autocomplete="off" aria-label="Video password">
+      <button type="submit" class="btn btn-primary gate-submit">Watch</button>
+    </form>
+    <p class="gate-error" id="gateError" hidden>That password isn't right. Try again or email me.</p>
+    <a class="gate-email" href="mailto:david@blueinboxllc.com?subject=Setup%20video%20access">david@blueinboxllc.com</a>
+  </div>
+</div>
+<script>
+  (function () {
+    var PASSWORD = 'Video!123';
+    var VIDEO_URL = 'https://player.vimeo.com/video/1200606139?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479';
+    var gate = document.getElementById('videoGate');
+    var overlay = document.getElementById('gateOverlay');
+    var close = document.getElementById('gateClose');
+    var form = document.getElementById('gateForm');
+    var input = document.getElementById('gatePassword');
+    var error = document.getElementById('gateError');
+    function open() { overlay.classList.add('open'); error.hidden = true; setTimeout(function () { input.focus(); }, 50); }
+    function shut() { overlay.classList.remove('open'); }
+    function unlock() {
+      shut();
+      gate.outerHTML = '<div class="video-embed"><div style="padding:56.25% 0 0 0;position:relative;">' +
+        '<iframe src="' + VIDEO_URL + '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="james-setup"></iframe></div></div>';
+    }
+    gate.addEventListener('click', open);
+    gate.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value === PASSWORD) { unlock(); }
+      else { error.hidden = false; input.select(); }
+    });
+    close.addEventListener('click', shut);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) shut(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
+  })();
+</script>
 
 </body>
 </html>
