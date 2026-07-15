@@ -151,6 +151,18 @@
   .prin-prose p + p { margin-top: 22px; }
   .prin-prose a { color: var(--green); text-decoration: none; font-weight: 600; }
   .prin-prose a:hover { text-decoration: underline; }
+  /* products */
+  .products { background: var(--cream-soft); }
+  .products-head { max-width: 640px; margin-bottom: 44px; }
+  .products-head h2 { margin-bottom: 16px; }
+  .products-head p { color: var(--muted); font-size: 19px; line-height: 1.6; }
+  .product-list { display: flex; flex-direction: column; gap: 24px; max-width: 760px; }
+  .product { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 36px 38px; }
+  .product .p-name { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+  .product h3 { font-size: 25px; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: 14px; }
+  .product p { color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 22px; }
+  .product a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green); padding-bottom: 2px; }
+  .product a:hover { color: var(--green-deep); }
 
 
   /* Footer */
@@ -186,14 +198,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Custom Claude and Claude Code setups</p>
-    <h1>Run your business<br>with <em>Claude Code</em>.</h1>
-    <p class="sub" style="margin-bottom: 20px;">Hi, I'm David, a developer in Los Angeles, CA. For 10 years I've built for top brands like Toyota, the NFL, HBO Max, AT&amp;T, and American Express.</p>
-    <p class="sub" style="margin-bottom: 20px;">Claude has one-click connectors for the easy tools. The real work that runs your business takes Claude Code, and that's what I set up for you. The stuff you'd hire a WordPress developer or a bookkeeper for, you just ask for instead.</p>
-    <p class="sub">For most people, one free thirty-minute setup is all they ever need. A few want more complex AI apps, and that's the work I'd charge for.</p>
+    <p class="eyebrow">AI consulting for small business</p>
+    <h1>You didn't miss the AI wave.<br><em>You just need a place to start.</em></h1>
+    <p class="sub" style="margin-bottom: 20px;">Hi, I'm David. For ten years I built for brands like Toyota, the NFL, and American Express. Now I bring that to small businesses.</p>
+    <p class="sub" style="margin-bottom: 20px;">Everyone says AI will change your business. Nobody shows you where it fits. So I learn how you actually work, find the few spots where AI saves you real time and money, and set them up. No platform to sell, no jargon, whatever tools fit you best.</p>
+    <p class="sub">The first thirty-minute look is free.</p>
     <div class="btn-row">
-      <a href="https://calendly.com/blueinbox/30min" target="_blank" rel="noopener" class="btn btn-primary">Book your free setup</a>
-      <a href="#examples" class="btn btn-text">See what this looks like</a>
+      <a href="https://calendly.com/blueinbox/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a free look</a>
+      <a href="#examples" class="btn btn-text">See where it helps</a>
     </div>
   </div>
 </section>
@@ -205,88 +217,38 @@
   <div class="wrap">
     <div class="ex-head">
       <p class="label">What this looks like</p>
-      <h2>Real things you'll be able to do.</h2>
+      <h2>Where AI usually saves the most time.</h2>
     </div>
     <div class="ex-grid">
       <div class="ex">
-        <span class="tag">WordPress, Squarespace, Wix</span>
-        <h3>Change your site by just asking</h3>
-        <p>Say it in plain words and it happens on your site, whatever you built it on. No developer, no waiting a week for a small fix.</p>
-        <ul class="asks">
-          <li>Make my homepage background green.</li>
-          <li>Add a page for the new service and put it in the menu.</li>
-          <li>Swap the hero photo for the one in this folder.</li>
-        </ul>
+        <span class="tag">Bookkeeping</span>
+        <h3>Stop hand-sorting every expense</h3>
+        <p>Someone spends two days a month sorting transactions. AI does the first pass in minutes and flags only the odd ones for a person to check. Your books close faster and you stop paying for busywork.</p>
       </div>
       <div class="ex">
-        <span class="tag">QuickBooks, Xero, FreshBooks</span>
-        <h3>Talk to your books</h3>
-        <p>Plain English, real numbers, no reports to build.</p>
-        <ul class="asks">
-          <li>Who still owes me money, and how overdue are they?</li>
-          <li>What did I make last month versus the month before?</li>
-          <li>How does this quarter stack up against last year?</li>
-        </ul>
+        <span class="tag">Customer email</span>
+        <h3>Answer the same questions once</h3>
+        <p>You get the same ten questions all day. AI drafts the replies in your voice and you glance and hit send. The mornings that used to vanish into your inbox take minutes.</p>
       </div>
       <div class="ex">
-        <span class="tag">Mailchimp, Constant Contact, Klaviyo</span>
-        <h3>Sound like you, not a robot</h3>
-        <p>Newsletters in your own voice. It knows how your business talks, so nothing goes out generic or off-brand.</p>
-        <ul class="asks">
-          <li>Turn this month's projects into a newsletter in my voice.</li>
-          <li>Who hasn't opened my last three emails?</li>
-          <li>Schedule this to go out Tuesday at 9am.</li>
-        </ul>
+        <span class="tag">Quotes and proposals</span>
+        <h3>Turn a few notes into a finished quote</h3>
+        <p>A proposal that took an hour comes back drafted from a handful of bullet points, priced and formatted the way you always do it. You edit and send.</p>
       </div>
       <div class="ex">
-        <span class="tag">Jobber, Housecall Pro, ServiceTitan</span>
-        <h3>Run your jobs without the busywork</h3>
-        <p>Ask your job software in plain words instead of digging through a dashboard.</p>
-        <ul class="asks">
-          <li>Where does the Miller job stand?</li>
-          <li>Who hasn't paid yet, and for how long?</li>
-          <li>Send the quote for the Davis deck.</li>
-        </ul>
+        <span class="tag">Follow-up</span>
+        <h3>Nothing slips through the cracks</h3>
+        <p>Every call gets logged and every lead gets a nudge, without you remembering to do it. You get a short list of who to call first, in order.</p>
       </div>
       <div class="ex">
-        <span class="tag">Shopify, WooCommerce, BigCommerce</span>
-        <h3>Run your store from a sentence</h3>
-        <p>Your store, run by asking instead of clicking through admin.</p>
-        <ul class="asks">
-          <li>Mark order #1043 shipped.</li>
-          <li>Bump the price on the summer line by 10%.</li>
-          <li>Find everyone who bought the blue one and never came back.</li>
-        </ul>
+        <span class="tag">Reporting</span>
+        <h3>Your numbers without the spreadsheet night</h3>
+        <p>The monthly report you stitch together from three tools by hand gets built for you. Ask how last month went and get a straight answer.</p>
       </div>
       <div class="ex">
-        <span class="tag">Toast, Clover, Lightspeed</span>
-        <h3>Know your numbers at the register</h3>
-        <p>Ask your POS straight, no end-of-day report to run.</p>
-        <ul class="asks">
-          <li>What sold best last week?</li>
-          <li>How did Saturday compare to last month?</li>
-          <li>Which menu items are barely making money?</li>
-        </ul>
-      </div>
-      <div class="ex">
-        <span class="tag">Clio, MyCase</span>
-        <h3>Stay on top of your matters</h3>
-        <p>Your practice software, answered in plain English.</p>
-        <ul class="asks">
-          <li>Which cases are waiting on me?</li>
-          <li>What's due this week?</li>
-          <li>Who still owes a retainer?</li>
-        </ul>
-      </div>
-      <div class="ex">
-        <span class="tag">Mindbody, Boulevard, Vagaro</span>
-        <h3>Keep your chairs full</h3>
-        <p>The booking software you already run, made askable.</p>
-        <ul class="asks">
-          <li>What's on the books for tomorrow?</li>
-          <li>Where are the open slots this week?</li>
-          <li>Which regulars haven't booked in a month?</li>
-        </ul>
+        <span class="tag">Team know-how</span>
+        <h3>Answers without asking around</h3>
+        <p>The things that live in one person's head, or a folder nobody opens, become something anyone can just ask. New hires get up to speed without bugging everyone.</p>
       </div>
     </div>
   </div>
@@ -299,8 +261,8 @@
   <div class="wrap">
     <div class="demo-head">
       <p class="label">See it in action</p>
-      <h2>Here's a real setup, start to finish.</h2>
-      <p>Thirty minutes, one tool connected, real questions answered. This is what your free session looks like.</p>
+      <h2>Here's a real session, start to finish.</h2>
+      <p>Thirty minutes, one real task, handled with AI. This is what your free look feels like.</p>
     </div>
     <div class="video-wrap">
       <div class="video-gate" id="videoGate" role="button" tabindex="0" aria-label="Request access to the setup video">
@@ -320,12 +282,21 @@
 
 <hr class="rule">
 
-<!-- PRINCIPLES -->
-<section class="principles">
+<!-- PRODUCTS -->
+<section class="products" id="products">
   <div class="wrap">
-    <p class="label">Memory tool</p>
-    <div class="prin-prose">
-      <p>You also get to try my memory tool, included free. It holds the things only you know about your business, the judgment calls and the context, so Claude stops guessing and gets sharper the more you use it. <a href="https://blueinbox-admin.github.io/ideas/activememory/" target="_blank" rel="noopener">Take a look at the prototype.</a></p>
+    <div class="products-head">
+      <p class="label">Tools I've built</p>
+      <h2>When the same problem keeps coming up, I build for it.</h2>
+      <p>Most of my work is advice, tailored to your business. But a few problems show up everywhere, so I built tools to fix them. Clients get first crack.</p>
+    </div>
+    <div class="product-list">
+      <div class="product">
+        <p class="p-name">Zoutcomes</p>
+        <h3>A memory for your AI.</h3>
+        <p>AI is only as good as what it knows about you. Zoutcomes remembers how your business actually runs, the rules, the quirks, the way you like things done, so your AI tools stop guessing and get it right. It works alongside whatever AI you already use.</p>
+        <a href="https://blueinbox-admin.github.io/ideas/activememory/" target="_blank" rel="noopener">See the prototype</a>
+      </div>
     </div>
   </div>
 </section>
