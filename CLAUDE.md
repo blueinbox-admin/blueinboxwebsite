@@ -1,12 +1,12 @@
-# Blue Inbox — Website
+# Blue Inbox Website
 
-Landing page for Blue Inbox LLC, an AI data consulting service. The pitch: most of
-what a company knows was never written down (it lives in meetings, spreadsheets, and
-people's heads), so their AI tools give junk answers. Blue Inbox digs that knowledge
-out, gets it in shape, and helps the client pick the AI tools that actually fit.
-Advisory and tool-agnostic, not selling a platform.
+Landing page for Blue Inbox LLC, a web development business offering business websites,
+online stores and custom web tools. The site connects to the fictional Blue Inbox
+series on SwayFrame, with an explicit distinction between the show and real services.
 
-Contact: david@blueinboxllc.com · LinkedIn: /in/david-zernik-los-angeles
+Public copy uses the company voice. No personal names, personal biography or personal
+LinkedIn links. Existing contact email remains the destination behind company-labeled
+contact links. Do not invent client results, testimonials, credentials or prices.
 
 ## Tech
 
@@ -53,9 +53,9 @@ not "tech vendor."
 
 ## Structure of index.html
 
-Hero → big-picture quote band → "What this looks like" examples (Meetings, Tribal
-knowledge, Scattered data, Tool choice) → "How I work" 3 steps → "What to expect"
-principles → contact CTA → footer (email + LinkedIn).
+Hero and SwayFrame feature link, services, three-step process, Blue Inbox series
+feature, contact CTA, footer. The old personal consulting pitch and gated setup
+video have been removed. No JavaScript or client-side password gate is needed.
 
 ## Note
 
