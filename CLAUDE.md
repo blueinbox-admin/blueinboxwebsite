@@ -1,7 +1,7 @@
 # Blue Inbox Website
 
-Landing page for Blue Inbox LLC, a web development business offering business websites,
-online stores and custom web tools. The site connects to the fictional Blue Inbox
+Landing page for Blue Inbox LLC, a Los Angeles development partner for marketing agencies, offering marketing
+integrations, custom AI applications and interactive campaign experiences. The site connects to the fictional Blue Inbox
 series on SwayFrame, with an explicit distinction between the show and real services.
 
 Public copy uses the company voice. No personal names, personal biography or personal
@@ -53,7 +53,7 @@ not "tech vendor."
 
 ## Structure of index.html
 
-Hero and SwayFrame feature link, services, three-step process, Blue Inbox series
+Contrasting blue SwayFrame banner, agency-focused hero, services, three-step process, Blue Inbox series
 feature, contact CTA, footer. The old personal consulting pitch and gated setup
 video have been removed. No JavaScript or client-side password gate is needed.
 
